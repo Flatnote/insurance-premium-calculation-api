@@ -37,7 +37,7 @@ app.get("/", async (req: Request, res: Response) => {
 
 app.post("/getProduct", async (req: Request, res: Response) => {
   try {
-    const serviceURL = process.env.FWD_ECOMMERCE_SERVICE_URL || "";
+    const serviceURL = `${process.env.FWD_ECOMMERCE_SERVICE_URL}/getProduct` || "";
     const result = await axios.post(serviceURL, req.body);
     res.send(result.data);
   } catch (error) {
